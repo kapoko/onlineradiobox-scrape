@@ -2,6 +2,8 @@ const { type } = require('os');
 const puppeteer = require('puppeteer');
 fs = require('fs');
 
+const baseUrl = 'https://onlineradiobox.com/North-America/';
+
 /**
  * Log everything to file for later reference
  */
@@ -43,7 +45,7 @@ async function singlePageTest() {
 
     console.log("📻 Starting!");
 
-    await page.goto('https://onlineradiobox.com/North-America/', {waitUntil: 'networkidle2'});
+    await page.goto(baseUrl, {waitUntil: 'networkidle2'});
     // let skipTo = 'https://onlineradiobox.com/us'; // Optional skip to a certain page
 
     // Don't load assets
